@@ -1,0 +1,22 @@
+.btn-description {
+    margin-left: 1%;
+}
+
+.card {
+    margin: 0.5%;
+    width: 16rem;
+}
+
+.inner-container {
+    margin: 0 auto;
+}
+
+@media(max-width:500px) {
+    .card {
+        margin: 1% auto;
+        width: 18rem;
+    }
+    .btn-description {
+        margin-left: 5%;
+    }
+}
