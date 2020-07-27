@@ -1,85 +1,30 @@
-<%- include('partials/header') %>
+<% if(status==true){ %>
+    <%- include('partials/redirectheader'); %>
+        <% } else{ %>
 
-    <div class=" row container-fluid">
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-1.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">GLA Mathura U.P</h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-2.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">Chandigarh University</h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college3.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">Delhi University </h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-4.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">Amity College Noida </h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-5.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">Dcrust Murthal Sonipat</h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-6.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">BITS Pilani </h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-7.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">VIT vellore Chennai</h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-        <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="/images/college-8.jpg" alt="Card image cap" style="height: 200px;">
-                <div class="card-body">
-                    <h5 class="card-title">YMCA Faridabad Haryana</h5>
-                    <p class="card-text">Adimission are open for all the courses<br> Admission Start : 22/08/2020 <br>Admission Close : 22/0912020</p>
-                    <a href="#" class="btn btn-primary">See Description</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <%- include('partials/footer') %>
+            <%- include('partials/header'); %>
+                <% } %>
+
+
+                    <div class=" row container-fluid">
+                        <% Array.forEach((admission)=>{ %>
+                            <div class="col col-md-4 col-sm-6 col-12 col-lg-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="/images/college-<%=admission.id %>.jpg" alt="Card image cap" style="height: 200px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= admission.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= admission.description %><br> Admission Start :
+                                                <%= admission.startingDate %> <br>Admission Close :
+                                                    <%= admission.lastDate %>
+                                        </p>
+                                        <a href=<%=admission.descriptionLink %> class="btn btn-primary">See Description</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+
+                    </div>
+                    <%- include('partials/footer') %>

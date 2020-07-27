@@ -1,74 +1,35 @@
-<%- include('partials/header');%>
+<% if(status==true){ %>
+    <%- include('partials/redirectheader'); %>
+        <% } else{ %>
 
-    <div class="container">
-        <div class="inner-container">
-            <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br> Eligiblity : 10th/12th <br> Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR New Delhi </h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th <br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br>Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Indian Navy AA and SSR</h5>
-                        <p class="card-text">Starting Date : 23/07/2020 <br> Last Date : 23/09/2020<br>Eligiblity : 10th/12th<br>Vacancy : 204</p>
-                        <a href="#" class="btn btn-primary">Apply</a>
-                        <a href="#" class="btn btn-secondary btn-description">See Description</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <%- include('partials/header'); %>
+                <% } %>
 
-    <%- include('partials/footer') %>
+
+                    <div class="container">
+                        <div class="inner-container">
+                            <div class="row">
+                                <% latestJobArray.forEach((latestJob)=>{ %>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <%= latestJob.title %>
+                                            </h5>
+                                            <p class="card-text">Starting Date :
+                                                <%= latestJob.startingDate %> <br> Last Date :
+                                                    <%= latestJob.lastDate  %><br> Eligiblity :
+                                                        <%= latestJob.eligiblity  %> <br> Vacancy :
+                                                            <%= latestJob.vacancy %>
+                                            </p>
+                                            <a href=<%=latestJob.applyLink %> class="btn btn-primary">Apply</a>
+                                            <a href=<%=latestJob.descriptionLink %>  class="btn btn-secondary btn-description">See Description</a>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <%- include('partials/footer') %>
