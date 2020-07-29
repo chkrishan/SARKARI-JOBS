@@ -28,6 +28,7 @@ const expectedResultSchema = new mongoose.Schema({
 });
 
 const latestJobSchema = new mongoose.Schema({
+    _id: String,
     title: String,
     startingDate: String,
     lastDate: String,
@@ -68,6 +69,17 @@ const ExpectedAdmitCard = new mongoose.model('ExpectedAdmitCard', expectedResult
 const LatestJob = new mongoose.model('LatestJob', latestJobSchema);
 const CompetitiveExam = new mongoose.model('CompetitiveExam', competitiveExamSchema);
 const Admission = new mongoose.model('Admission', admissionSchema);
+
+
+
+// array.forEach((newjob) => {
+//     const job = new LatestJob(newjob);
+//     job.save().then((result) => {
+//         console.log("new job is saved");
+//     }).catch((err) => {
+//         console.log(err);
+//     });
+// })
 
 const models = {
     User: User,

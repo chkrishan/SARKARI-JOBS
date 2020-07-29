@@ -15,14 +15,14 @@
                                             <h5 class="card-title">
                                                 <%= latestJob.title %>
                                             </h5>
-                                            <p class="card-text">Starting Date :
-                                                <%= latestJob.startingDate %> <br> Last Date :
-                                                    <%= latestJob.lastDate  %><br> Eligiblity :
-                                                        <%= latestJob.eligiblity  %> <br> Vacancy :
-                                                            <%= latestJob.vacancy %>
+                                            <p class="card-text">Starting Date : <b>
+                                                <%= latestJob.startingDate %> </b><br> Last Date : <b>
+                                                    <%= latestJob.lastDate  %> </b><br> Eligiblity : <b>
+                                                        <%= latestJob.eligiblity  %> </b><br> Vacancy : <b>
+                                                            <%= latestJob.vacancy %> </b>
                                             </p>
-                                            <a href=<%=latestJob.applyLink %> class="btn btn-primary">Apply</a>
-                                            <a href=<%=latestJob.descriptionLink %>  class="btn btn-secondary btn-description">See Description</a>
+                                            <a href=<%=latestJob.applyLink %> target="_blank" class="btn btn-primary">Apply</a>
+                                            <a href=<%=latestJob.descriptionLink %> target="_blank" class="btn btn-secondary btn-description">See Description</a>
                                         </div>
                                     </div>
                                     <% }) %>

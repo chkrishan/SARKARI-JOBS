@@ -29,7 +29,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/govermentJob', { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/govermentJob', { useUnifiedTopology: true, useNewUrlParser: true })
+    .then((result) => {
+        console.log("database is connected");
+    }).catch((err) => {
+        console.log(err);
+    });
 
 mongoose.set('useCreateIndex', true);
 
