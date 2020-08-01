@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="list-group">
                                     <% expectedResultArray.forEach((result)=>{  %>
-                                        <a href=<%=result.link %> class="list-group-item list-group-item-action"><%= result.title %> (Expected Date : <%= result.expectedDate %>) </a>
+                                        <a href=<%=result.link %> target="_blank" class="list-group-item list-group-item-action"><%= result.title %> (Expected Date : <%= result.expectedDate %>) </a>
                                         <% }) %>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="list-group">
                                     <% boardResultArray.forEach((result)=>{ %>
-                                        <a href=<%=result.link %> target="_blank" class="list-group-item list-group-item-action "><%= result.title %> </a>
+                                        <a href=<%=result.link %> target="_blank" target="_blank" class="list-group-item list-group-item-action "><%= result.title %> </a>
                                         <% }) %>
                                 </div>
                             </div>

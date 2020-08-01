@@ -17,11 +17,13 @@ userSchema.plugin(passportLocalMongoose); //Passport-Local Mongoose is a Mongoos
 userSchema.plugin(findOrCreate);
 
 const resultSchema = new mongoose.Schema({
+    _id: String,
     title: String,
     link: String
 });
 
 const expectedResultSchema = new mongoose.Schema({
+    _id: String,
     title: String,
     link: String,
     expectedDate: String
@@ -40,6 +42,7 @@ const latestJobSchema = new mongoose.Schema({
 
 
 const competitiveExamSchema = new mongoose.Schema({
+    _id: String,
     title: String,
     startingDate: String,
     lastDate: String,
@@ -49,6 +52,7 @@ const competitiveExamSchema = new mongoose.Schema({
 
 
 const admissionSchema = new mongoose.Schema({
+    _id: String,
     title: String,
     startingDate: String,
     lastDate: String,
@@ -70,16 +74,20 @@ const LatestJob = new mongoose.model('LatestJob', latestJobSchema);
 const CompetitiveExam = new mongoose.model('CompetitiveExam', competitiveExamSchema);
 const Admission = new mongoose.model('Admission', admissionSchema);
 
+// const array1 = [
+// ]
 
 
-// array.forEach((newjob) => {
-//     const job = new LatestJob(newjob);
+// array1.forEach((newresult) => {
+//     const job = new LatestAnswerkey(newresult);
 //     job.save().then((result) => {
-//         console.log("new job is saved");
+//         console.log("new result is saved");
 //     }).catch((err) => {
 //         console.log(err);
 //     });
-// })
+// });
+
+
 
 const models = {
     User: User,
